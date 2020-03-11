@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"> -->
+
+    <title>Toggleable Component</title>
+  </head>
+  <body>
+    <div style="display: flex; flex-flow: column;">
+     
+      <form>
+        <div class="form-group">
+          <toggle-input value="Toggleable" editable="true" id="text-input"></toggle-input>
+        </div>
+      </form>
+      <ul>
+        
+        <li><toggle-input id="uneditable-input" div-class="read-mode" value="test" css="index.css"></toggle-input></li>
+        <li><toggle-input id="number-input" value="0" type="number" editable="true"></toggle-input></li>
+      </ul>
+    </div>
+    
+  </body>
+
+  <script>
+    let textInput = document.getElementById("text-input");
+    let numberInput = document.getElementById("number-input");
+    let uneditableInput = document.getElementById("uneditable-input");
+
+    textInput.addEventListener("input-change", (event)=>{
+      uneditableInput.value = event.value;      
+    })
+
+</script>
+</html>
